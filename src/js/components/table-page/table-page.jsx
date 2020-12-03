@@ -1,10 +1,17 @@
 import React, {Fragment} from "react";
 import Controls from "../controls/controls";
-import Pagination from "../pagination/pagination";
 import UserInfo from "../user-info/user-info";
 import Table from "../table/table";
+import {connect} from "react-redux";
+import {fetchUsers} from "../../store/action/action";
 
-const TablePage = () => {
+import {tablePageType} from "../../types/types";
+
+const TablePage = (props) => {
+  const {getUsers} = props;
+
+  getUsers();
+
   return (
     <Fragment>
       <Controls/>
@@ -14,4 +21,14 @@ const TablePage = () => {
   );
 };
 
-export default TablePage;
+TablePage.propTypes = tablePageType;
+
+const mapDispatchToPorps = (dispatch) => ({
+  getUsers() {
+    dispatch(fetchUsers());
+  }
+});
+
+export {TablePage};
+
+export default connect(null, mapDispatchToPorps)(TablePage);

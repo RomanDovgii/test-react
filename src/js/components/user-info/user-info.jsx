@@ -12,9 +12,7 @@ const UserInfo = () => {
         </li>
         <li className="user-info__item user-info__item--description">
           <p className="user-info__description">Описание:</p>
-          <textarea>
-              et lacus magna dolor...
-          </textarea>
+          <textarea defaultValue="et lacus magna dolor..."/>
         </li>
         <li className="user-info__item">
           <p className="user-info__description">Адрес проживания:</p>

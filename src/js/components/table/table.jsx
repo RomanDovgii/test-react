@@ -1,82 +1,31 @@
 import React from "react";
 import Pagination from "../pagination/pagination";
+import TableHeading from "../table-heading/table-heading";
+import TableElement from "../table-element/table-element";
+import {connect} from "react-redux";
+import {tableType} from "../../types/types";
 
-const Table = () => {
+const Table = (props) => {
+  const {currentPagePeople} = props;
+
   return (
     <section className="table">
-      <Pagination/>
+      {/* <Pagination/> */}
       <table className="table__table">
+        <thead>
+          <TableHeading/>
+        </thead>
         <tbody>
-          <tr className="table__row">
-            <th className="table__heading table__heading--bot-to-top">id</th>
-            <th className="table__heading table__heading--bot-to-top">firstName</th>
-            <th className="table__heading table__heading--bot-to-top">lastName</th>
-            <th className="table__heading table__heading--bot-to-top">email</th>
-            <th className="table__heading table__heading--bot-to-top">phone</th>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
-          <tr className="table__row">
-            <td className="table__data">101</td>
-            <td className="table__data">Nikolai</td>
-            <td className="table__data">Nikolaev</td>
-            <td className="table__data">nikolaev@gmail.com</td>
-            <td className="table__data">8 (999) 999-99-99</td>
-          </tr>
+          {
+            currentPagePeople.map((person) => {
+              return (
+                <TableElement
+                  key = {`${person.id}+${person.lastName}+${person.firstNmae}`}
+                  person = {person}
+                />
+              );
+            })
+          }
         </tbody>
       </table>
       <Pagination/>
@@ -84,4 +33,11 @@ const Table = () => {
   );
 };
 
-export default Table;
+Table.propTypes = tableType;
+
+const mapStateToProps = (state) => ({
+  currentPagePeople: state.currentPagePeople
+});
+
+export {Table};
+export default connect(mapStateToProps)(Table);

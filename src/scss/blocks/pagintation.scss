@@ -17,4 +17,8 @@
 .pagination__link {
     text-decoration: none;
     color: #333333;
+
+    &--active {
+      font-weight: 700;
+    }
 }
