@@ -1,12 +1,11 @@
 import {ActionType} from "../action/action";
 import {extend} from "../../utils/utils";
 import {MAXIMUM_USERS_PER_PAGE} from "../../utils/const";
-import {mocks} from "../../mocks/mocks";
 
 const initialState = {
   people: [],
   currentPagePeople: [],
-  personSelected: {},
+  selectedUser: {},
   pages: 0,
   currentPage: 1
 };
@@ -14,15 +13,44 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.FETCH_USERS:
-      const aPages = Math.ceil(mocks.length / MAXIMUM_USERS_PER_PAGE);
-      const aCurrentPage = mocks.slice(0, MAXIMUM_USERS_PER_PAGE);
+      console.log(action.payload);
+      const users = action.payload;
+      const aPages = Math.ceil(users.length / MAXIMUM_USERS_PER_PAGE);
+      const aCurrentPagePeople = users.slice(0, MAXIMUM_USERS_PER_PAGE);
 
       return extend(
           state,
           {
-            people: mocks,
-            currentPagePeople: aCurrentPage,
+            people: users,
+            currentPagePeople: aCurrentPagePeople,
             pages: aPages,
+            currentPage: 1
+          }
+      );
+    case ActionType.SELECT_USER:
+      return extend(
+          state,
+          {
+            selectedUser: action.payload
+          }
+      );
+    case ActionType.ADD_USER:
+      const people = state.people;
+
+      const peopleUpdated = [
+        action.payload,
+        ...people
+      ];
+
+      const aPagesUpdated = Math.ceil(peopleUpdated.length / MAXIMUM_USERS_PER_PAGE);
+      const aCurrentPagePeopleUpdated = peopleUpdated.slice(0, MAXIMUM_USERS_PER_PAGE);
+
+      return extend(
+          state,
+          {
+            people: peopleUpdated,
+            currentPagePeople: aCurrentPagePeopleUpdated,
+            pages: aPagesUpdated,
             currentPage: 1
           }
       );

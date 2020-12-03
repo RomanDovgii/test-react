@@ -33,3 +33,9 @@ export const paginationType = {
   pages: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired
 };
+
+export const addToTableType = {
+  isOpen: PropTypes.bool.isRequired,
+  onAddClick: PropTypes.func.isRequired,
+  onCloseClick: PropTypes.func.isRequired
+};

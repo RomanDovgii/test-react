@@ -1,11 +1,18 @@
 import React from "react";
+import {connect} from "react-redux";
+import {selectUser} from "../../store/action/action";
 import {tableElementType} from "../../types/types";
 
-const TableElement = ({person}) => {
-  const {id, firstName, lastName, email, phone} = person;
+const TableElement = ({user, onRowClick}) => {
+  const {id, firstName, lastName, email, phone} = user;
 
   return (
-    <tr className="table__row">
+    <tr
+      className="table__row"
+      onClick={() => {
+        onRowClick(user);
+      }}
+    >
       <td className="table__data">{id}</td>
       <td className="table__data">{firstName}</td>
       <td className="table__data">{lastName}</td>
@@ -17,4 +24,11 @@ const TableElement = ({person}) => {
 
 TableElement.propTypes = tableElementType;
 
-export default TableElement;
+const mapDispatchToPorps = (dispatch) => ({
+  onRowClick(user) {
+    dispatch(selectUser(user));
+  }
+});
+
+export {TableElement};
+export default connect(null, mapDispatchToPorps)(TableElement);
