@@ -3,10 +3,11 @@
     padding: 0;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding-top: 50px;
-    padding-bottom: 50px;
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }

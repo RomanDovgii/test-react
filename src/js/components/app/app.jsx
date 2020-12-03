@@ -1,23 +1,24 @@
 import React from "react";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
-import {AppRoute} from "../../utils/const";
+// import {AppRoute} from "../../utils/const";
+import TablePage from "../table-page/table-page";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route
+        {/* <Route
           exact
           path={AppRoute.SELECT}
-          render={({history}) => {
+          render={() => {
           }}
-        />
+        /> */}
 
         <Route
           exact
-          path={AppRoute.TABLE}
-          render={({history}) => {
-          }}
+          render={() => (
+            <TablePage/>
+          )}
         />
       </Switch>
     </BrowserRouter>

@@ -1,6 +1,11 @@
 .table {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.table__table {
     border-collapse: collapse;
-    margin-top: 30px;
     width: 100%;
     max-width: 1340px;
 }
@@ -26,7 +31,7 @@
         &::after {
             content: "";
             box-sizing: border-box;
-            
+
             display: block;
             width: 5px;
             height: 10px;
@@ -47,7 +52,7 @@
         &::after {
             content: "";
             box-sizing: border-box;
-            
+
             display: block;
             width: 5px;
             height: 10px;
@@ -63,5 +68,5 @@
             border-right: 5px solid transparent;
         }
     }
-    
+
 }
