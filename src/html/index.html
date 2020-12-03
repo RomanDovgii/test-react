@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+<body>
+    <div id="root">
+        <div class="controls">
+            <form class="controls__filtration">
+                <input class="controls__search" type="text" name="filtration input" placeholder="Введите данные поиска">
+                <button class="controls__find" type="submit">Найти</button>
+            </form>
+            <button class="controls__add-button">Добавить </button>
+            <form class="controls__add-user">
+                <table class="controls__table table">
+                    <tr class="table__row">
+                        <th class="table__heading">id</th>
+                        <th class="table__heading">firstName</th>
+                        <th class="table__heading">lastName</th>
+                        <th class="table__heading">email</th>
+                        <th class="table__heading">phone</th>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__data">
+                            <input type="text" name="id" class="table__data-input" placeholder="Введите id">
+                        </td>
+                        <td class="table__data">
+                            <input type="text" name="firstName" class="table__data-input" placeholder="Введите Имя">
+                        </td>
+                        <td class="table__data">
+                            <input type="text" name="lastName" class="table__data-input" placeholder="Введите Фамилию">
+                        </td>
+                        <td class="table__data">
+                            <input type="email" name="email" class="table__data-input" placeholder="Введите email">
+                        </td>
+                        <td class="table__data">
+                            <input type="text" name="phone" class="table__data-input" placeholder="Введите телефон">
+                        </td>
+                    </tr>
+                </table>
+
+                <button class="controls__add-button controls__add-button--to-table" type="submit">Добавить в таблицу</button>
+            </form>
+        </div>
+        <table class="table">
+            <tr class="table__row">
+                <th class="table__heading table__heading--bot-to-top">id</th>
+                <th class="table__heading table__heading--bot-to-top">firstName</th>
+                <th class="table__heading table__heading--bot-to-top">lastName</th>
+                <th class="table__heading table__heading--bot-to-top">email</th>
+                <th class="table__heading table__heading--bot-to-top">phone</th>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+            <tr class="table__row">
+                <td class="table__data">101</td>
+                <td class="table__data">Nikolai</td>
+                <td class="table__data">Nikolaev</td>
+                <td class="table__data">nikolaev@gmail.com</td>
+                <td class="table__data">8 (999) 999-99-99</td>
+            </tr>
+        </table>
+
+        <ul class="pagination">
+            <li class="pagination__item"><a href="#" class="pagination__link"><<</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link"><</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">1</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">4</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">5</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">...</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">56</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">57</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">58</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">59</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">60</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">></a></li>
+            <li class="pagination__item"><a href="#" class="pagination__link">>></a></li>
+        </ul>
+
+        <section class="user-info">
+            <ul class="user-nfo__list">
+                <li class="user-info__item">
+                    <p class="user-info__description">Выбран пользователь:</p>
+                    <p class="user-info__information">
+                        <b>Nikolai Nikolaev</b>
+                    </p>
+                </li>
+                <li class="user-info__item user-info__item--description">
+                    <p class="user-info__description">Описание:</p>
+                    <textarea>
+                        et lacus magna dolor...
+                    </textarea>
+                </li>
+                <li class="user-info__item">
+                    <p class="user-info__description">Адрес проживания:</p>
+                    <p class="user-info__information">
+                        <b>9792 Mattis Ct</b>
+                    </p>
+                </li>
+                <li class="user-info__item">
+                    <p class="user-info__description">Город:</p>
+                    <p class="user-info__information">
+                        <b>Waukesha</b>
+                    </p>
+                </li>
+                <li class="user-info__item">
+                    <p class="user-info__description">Провинция/Штат:</p>
+                    <p class="user-info__information">
+                        <b>WI</b>
+                    </p>
+                </li>
+                <li class="user-info__item">
+                    <p class="user-info__description">Индекс:</p>
+                    <p class="user-info__information">
+                        <b>22178</b>
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </div>    
+</body>
+</html>

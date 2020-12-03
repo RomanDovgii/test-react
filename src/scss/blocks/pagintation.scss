@@ -1,0 +1,19 @@
+.pagination {
+    list-style: none;
+
+    display: flex;
+    margin-top: 10px;
+}
+
+.pagination__item {
+    margin-left: 5px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.pagination__link {
+    text-decoration: none;
+    color: #333333;
+}

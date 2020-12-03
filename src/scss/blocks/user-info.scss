@@ -1,0 +1,21 @@
+.user-info {
+    margin-top: 30px;
+    max-width: 50%;
+}
+
+.user-nfo__list {
+    list-style: none;
+}
+
+.user-info__item {
+    display: flex;
+    margin-top: 10px;
+
+    &--description {
+        flex-direction: column;
+    }
+}
+
+.user-info__description {
+    margin-right: 10px;
+}

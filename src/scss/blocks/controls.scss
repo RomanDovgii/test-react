@@ -1,0 +1,33 @@
+.controls__filtration, .controls__add-user, .controls__add-button {
+    margin-top: 30px;
+}
+
+.controls__find, .controls__add-button {
+    box-sizing: border-box;
+    background-color: #e3e3e3;
+    border: 2px solid #3333335d;
+    padding: 10px 10px 10px 10px;
+
+    &:hover {
+        border: 2px solid #333333;
+    }
+
+    &:active {
+        background-color: #a5daa9;
+        border: 2px solid transparent;
+    }
+}
+
+.controls__add-button {
+    &--to-table {
+        margin-top: 10px;
+    }
+}
+
+.controls__filtration {
+    display: flex;
+}
+
+.controls__search {
+    padding: 10px 10px 10px 10px;
+}
