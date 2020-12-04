@@ -3,7 +3,7 @@ import TableHeading from "../table-heading/table-heading";
 import {addToTableType} from "../../types/types";
 import {connect} from "react-redux";
 import {ADDRESS_FOR_NEW_USER, DESCRIPTION_FOR_NEW_USER} from "../../utils/const";
-import {addUser} from "../../store/action/action";
+import {addUser, updateCurrentUsers, updatePagesCount} from "../../store/action/action";
 
 const AddToTable = ({isOpen, onAddClick, onCloseClick, onAddToTableClick}) => {
   const idRef = createRef();
@@ -81,6 +81,8 @@ AddToTable.propTypes = addToTableType;
 const mapDispatchToPorps = (dispatch) => ({
   onAddToTableClick(user) {
     dispatch(addUser(user));
+    dispatch(updateCurrentUsers());
+    dispatch(updatePagesCount());
   }
 });
 

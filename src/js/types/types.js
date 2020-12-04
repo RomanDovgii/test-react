@@ -26,7 +26,7 @@ export const tableElementType = {
 };
 
 export const tableType = {
-  currentPagePeople: PropTypes.arrayOf(personType).isRequired
+  currentPageUsers: PropTypes.arrayOf(personType).isRequired
 };
 
 export const paginationType = {

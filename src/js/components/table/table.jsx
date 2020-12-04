@@ -12,12 +12,15 @@ class Table extends PureComponent {
   }
 
   componentDidMount() {
-    const {loadData} = this.props;
-    loadData();
+    const {loadData, currentPageUsers} = this.props;
+
+    if (currentPageUsers.length === 0) {
+      loadData();
+    }
   }
 
   render() {
-    const {currentPagePeople} = this.props;
+    const {currentPageUsers} = this.props;
     return (
       <section className="table">
         <table className="table__table">
@@ -26,7 +29,7 @@ class Table extends PureComponent {
           </thead>
           <tbody>
             {
-              currentPagePeople.map((user) => {
+              currentPageUsers.map((user) => {
                 return (
                   <TableElement
                     key = {`${user.id}+${user.lastName}+${user.firstNmae}`}
@@ -47,12 +50,12 @@ Table.propTypes = tableType;
 
 const mapDispatchToPorps = (dispatch) => ({
   loadData() {
-    dispatch(fetchData(`SMALL`));
+    dispatch(fetchData(`LARGE`));
   }
 });
 
 const mapStateToProps = (state) => ({
-  currentPagePeople: state.currentPagePeople
+  currentPageUsers: state.currentPageUsers
 });
 
 export {Table};

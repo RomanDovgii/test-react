@@ -1,5 +1,5 @@
 import {SMALL_DATA, LARGE_DATA, Data} from "../../utils/const";
-import {fetchUsers} from "./action";
+import {fetchUsers, updateCurrentUsers, updatePagesCount} from "./action";
 
 export const fetchData = (dataSet) => (dispatch, _getState) => {
   let url;
@@ -20,8 +20,9 @@ export const fetchData = (dataSet) => (dispatch, _getState) => {
   .then((response) => response.json())
   .then((result) => {
     dispatch(fetchUsers(result));
+    dispatch(updateCurrentUsers());
+    dispatch(updatePagesCount());
   })
-  .catch((err) => {
-    console.log(`something went wron`);
+  .catch(() => {
   });
 };
