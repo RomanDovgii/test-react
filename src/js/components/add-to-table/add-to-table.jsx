@@ -2,7 +2,7 @@ import React, {createRef, Fragment} from "react";
 import TableHeading from "../table-heading/table-heading";
 import {addToTableType} from "../../types/types";
 import {connect} from "react-redux";
-import {ADDRESS_FOR_NEW_USER, DESCRIPTION_FOR_NEW_USER} from "../../utils/const";
+import {UNKNOWN_INFORMATION, DESCRIPTION_FOR_NEW_USER} from "../../utils/const";
 import {addUser, updateCurrentUsers, updatePagesCount} from "../../store/action/action";
 
 const AddToTable = ({isOpen, onAddClick, onCloseClick, onAddToTableClick}) => {
@@ -59,7 +59,12 @@ const AddToTable = ({isOpen, onAddClick, onCloseClick, onAddToTableClick}) => {
               lastName: lastNameRef.current.value,
               email: emailRef.current.value,
               phone: phoneRef.current.value,
-              address: ADDRESS_FOR_NEW_USER,
+              address: {
+                streetAddress: UNKNOWN_INFORMATION,
+                city: UNKNOWN_INFORMATION,
+                state: UNKNOWN_INFORMATION,
+                zip: UNKNOWN_INFORMATION
+              },
               description: DESCRIPTION_FOR_NEW_USER
             };
 

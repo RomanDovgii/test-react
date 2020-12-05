@@ -1,13 +1,15 @@
 import {ActionType} from "../action/action";
-import {extend} from "../../utils/utils";
-import {MAXIMUM_USERS_PER_PAGE} from "../../utils/const";
+import {extend, sortToTop, sortToBot} from "../../utils/utils";
+import {MAXIMUM_USERS_PER_PAGE, FilterType, FilterDirection} from "../../utils/const";
 
 const initialState = {
+  originalUsers: [],
   users: [],
   currentPageUsers: [],
   selectedUser: {},
   pages: 0,
-  currentPage: 1
+  currentPage: 1,
+  filter: `none`
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,6 +21,7 @@ const reducer = (state = initialState, action) => {
           state,
           {
             users: receivedUsers,
+            originalUsers: receivedUsers.slice()
           }
       );
     case ActionType.UPDATE_CURRENT_USERS:
@@ -63,6 +66,7 @@ const reducer = (state = initialState, action) => {
           state,
           {
             users: peopleUpdated,
+            originalUsers: peopleUpdated.slice(),
             currentPageUsers: aCurrentPagePeopleUpdated,
             pages: aPagesUpdated,
             currentPage: 1
@@ -104,6 +108,53 @@ const reducer = (state = initialState, action) => {
           state,
           {
             currentPage: prevPage
+          }
+      );
+    case ActionType.FILTER:
+      const startUsers = state.users;
+      const filterType = action.payload.filter;
+      const filterDirection = action.payload.direction;
+      let filteredUsers;
+
+      switch (filterType) {
+        case FilterType.ID:
+          filteredUsers = filterDirection === FilterDirection.TO_TOP
+            ? startUsers.sort((a, b) => {
+              return a.id - b.id;
+            })
+            : startUsers.sort((a, b) => {
+              return b.id - a.id;
+            });
+          break;
+        case FilterType.FIRST_NAME:
+          filteredUsers = filterDirection === FilterDirection.TO_TOP
+            ? startUsers.sort((a, b) => sortToTop(a.firstName, b.firstName))
+            : startUsers.sort((a, b) => sortToBot(a.firstName, b.firstName));
+          break;
+        case FilterType.LAST_NAME:
+          filteredUsers = filterDirection === FilterDirection.TO_TOP
+            ? startUsers.sort((a, b) => sortToTop(a.lastName, b.lastName))
+            : startUsers.sort((a, b) => sortToBot(a.lastName, b.lastName));
+          break;
+        case FilterType.EMAIL:
+          filteredUsers = filterDirection === FilterDirection.TO_TOP
+            ? startUsers.sort((a, b) => sortToTop(a.email, b.email))
+            : startUsers.sort((a, b) => sortToBot(a.email, b.email));
+          break;
+        case FilterType.PHONE:
+          filteredUsers = filterDirection === FilterDirection.TO_TOP
+            ? startUsers.sort((a, b) => sortToTop(a.phone, b.phone))
+            : startUsers.sort((a, b) => sortToBot(a.phone, b.phone));
+          break;
+        case FilterType.NONE:
+          const originalUsersList = state.originalUsers.slice();
+          filteredUsers = originalUsersList;
+          break;
+      }
+      return extend(
+          state,
+          {
+            users: filteredUsers,
           }
       );
   }

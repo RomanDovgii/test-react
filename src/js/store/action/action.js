@@ -57,3 +57,8 @@ export const toNextPage = () => ({
 export const toPrevPage = () => ({
   type: ActionType.PREV_PAGE
 });
+
+export const filterUsers = (filterInfo) => ({
+  type: ActionType.FILTER,
+  payload: filterInfo
+});
