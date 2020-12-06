@@ -170,6 +170,7 @@ const reducer = (state = initialState, action) => {
             state,
             {
               users: usersAfterSearch,
+              currentPage: 1
             }
         );
       } else {
@@ -177,6 +178,7 @@ const reducer = (state = initialState, action) => {
             state,
             {
               users: usersAfterSearch,
+              currentPage: 1
             }
         );
       }

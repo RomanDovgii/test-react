@@ -4,50 +4,10 @@ import {paginationType} from "../../types/types";
 import {changePage, toFirstPage, toLastPage, toNextPage, toPrevPage, updateCurrentUsers} from "../../store/action/action";
 
 const Pagination = ({pages, currentPage, onPageClick, onFirstClick, onPreviousClick, onNextClick, onLastClick}) => {
-
-  return (
-    <ul className="pagination">
-      {currentPage > 1 &&
-      <Fragment>
-        <li className="pagination__item">
-          <a
-            href="#"
-            className="pagination__link"
-            onClick={(evt) => {
-              evt.preventDefault();
-              onFirstClick();
-            }}>&lt;&lt;</a>
-        </li>
-        <li className="pagination__item">
-          <a
-            href="#"
-            className="pagination__link"
-            onClick={(evt) => {
-              evt.preventDefault();
-              onPreviousClick();
-            }}>&lt;</a>
-        </li>
-      </Fragment>
-      }
-      {[...Array(pages)].map((page, index) => {
-        return (
-          <li key={index} className="pagination__item">
-            <a
-              href="#"
-              className={`pagination__link ${index + 1 === currentPage ? `pagination__link--active` : ``}`}
-              onClick={(evt) => {
-                evt.preventDefault();
-                const newPage = index + 1;
-
-                onPageClick(newPage);
-              }}
-            >
-              {index + 1}
-            </a>
-          </li>
-        );
-      })}
-      {currentPage < pages &&
+  if (pages > 1) {
+    return (
+      <ul className="pagination">
+        {currentPage > 1 &&
         <Fragment>
           <li className="pagination__item">
             <a
@@ -55,8 +15,8 @@ const Pagination = ({pages, currentPage, onPageClick, onFirstClick, onPreviousCl
               className="pagination__link"
               onClick={(evt) => {
                 evt.preventDefault();
-                onNextClick();
-              }}>&gt;</a>
+                onFirstClick();
+              }}>&lt;&lt;</a>
           </li>
           <li className="pagination__item">
             <a
@@ -64,13 +24,56 @@ const Pagination = ({pages, currentPage, onPageClick, onFirstClick, onPreviousCl
               className="pagination__link"
               onClick={(evt) => {
                 evt.preventDefault();
-                onLastClick();
-              }}>&gt;&gt;</a>
+                onPreviousClick();
+              }}>&lt;</a>
           </li>
         </Fragment>
-      }
-    </ul>
-  );
+        }
+        {[...Array(pages)].map((page, index) => {
+          return (
+            <li key={index} className="pagination__item">
+              <a
+                href="#"
+                className={`pagination__link ${index + 1 === currentPage ? `pagination__link--active` : ``}`}
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  const newPage = index + 1;
+
+                  onPageClick(newPage);
+                }}
+              >
+                {index + 1}
+              </a>
+            </li>
+          );
+        })}
+        {currentPage < pages &&
+          <Fragment>
+            <li className="pagination__item">
+              <a
+                href="#"
+                className="pagination__link"
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  onNextClick();
+                }}>&gt;</a>
+            </li>
+            <li className="pagination__item">
+              <a
+                href="#"
+                className="pagination__link"
+                onClick={(evt) => {
+                  evt.preventDefault();
+                  onLastClick();
+                }}>&gt;&gt;</a>
+            </li>
+          </Fragment>
+        }
+      </ul>
+    );
+  } else {
+    return null;
+  }
 };
 
 Pagination.propTypes = paginationType;
