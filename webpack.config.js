@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const SplitByPathPlugin = require('split-by-path-webpack-plugin');
 const fs = require('fs');
 const path = require('path');
@@ -78,20 +77,5 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
-    plugins: [
-        new CopyWebpackPlugin(
-            {
-              patterns: [
-                    {
-                    from: './src/fonts',
-                    to: './fonts'
-                    },
-                    {
-                    from: './src/img',
-                    to: './img'
-                    }
-                ]
-            }
-        ),        
-    ].concat(htmlPlugins)
+    plugins: [].concat(htmlPlugins)
 };
