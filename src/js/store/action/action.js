@@ -1,8 +1,8 @@
 export const ActionType = {
   FILTER: `FILTER`,
+  SEARCH: `SEARCH`,
   ADD_USER: `ADD_USER`,
   SELECT_USER: `SELECT_USER`,
-  FILTER_BY: `FILTER_BY`,
   CHANGE_PAGE: `CHANGE_PAGE`,
   FETCH_USERS: `FETCH_USERS`,
   FLUSH_SELECTED: `FLUSH_SELECTED`,
@@ -61,4 +61,9 @@ export const toPrevPage = () => ({
 export const filterUsers = (filterInfo) => ({
   type: ActionType.FILTER,
   payload: filterInfo
+});
+
+export const searchUsers = (string) => ({
+  type: ActionType.SEARCH,
+  payload: string
 });
