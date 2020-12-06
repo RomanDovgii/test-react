@@ -57,7 +57,7 @@ Table.propTypes = tableType;
 
 const mapDispatchToPorps = (dispatch) => ({
   loadData() {
-    dispatch(fetchData(`LARGE`));
+    dispatch(fetchData(`SMALL`));
   }
 });
 

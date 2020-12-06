@@ -1,6 +1,7 @@
 import React, {createRef} from "react";
 import {connect} from "react-redux";
 import {searchUsers, updateCurrentUsers, updatePagesCount} from "../../store/action/action";
+import {searchPanelType} from "../../types/types";
 
 const SearchPanel = ({isLoading, onSearchClick}) => {
   const searchRef = createRef();
@@ -19,6 +20,8 @@ const SearchPanel = ({isLoading, onSearchClick}) => {
     </form>
   );
 };
+
+SearchPanel.propTypes = searchPanelType;
 
 const mapStateToProps = (state) => ({
   isLoading: state.isLoading

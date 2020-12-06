@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import {selectedUserType} from "../../types/types";
 
 const UserInfo = ({selectedUser}) => {
   if (Object.keys(selectedUser).length === 0) {
@@ -49,6 +50,8 @@ const UserInfo = ({selectedUser}) => {
     );
   }
 };
+
+UserInfo.propTypes = selectedUserType;
 
 const mapStateToProps = (state) => ({
   selectedUser: state.selectedUser

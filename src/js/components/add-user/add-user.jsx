@@ -1,6 +1,6 @@
 import React, {createRef, Fragment} from "react";
 import AddUserHeading from "../add-user-heading/add-user-heading";
-import {addToTableType} from "../../types/types";
+import {addUserType} from "../../types/types";
 import {connect} from "react-redux";
 import {UNKNOWN_INFORMATION, DESCRIPTION_FOR_NEW_USER} from "../../utils/const";
 import {addUser, updateCurrentUsers, updatePagesCount} from "../../store/action/action";
@@ -89,7 +89,7 @@ const AddUser = ({isOpen, isLoading, onAddClick, onCloseClick, onAddToTableClick
   );
 };
 
-AddUser.propTypes = addToTableType;
+AddUser.propTypes = addUserType;
 
 const mapStateToProps = (state) => ({
   isLoading: state.isLoading

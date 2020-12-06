@@ -2,6 +2,7 @@ import React, {createRef} from "react";
 import {connect} from "react-redux";
 import {filterUsers, updateCurrentUsers} from "../../store/action/action";
 import {FilterDirection, FilterType} from "../../utils/const";
+import {tableHeadingType} from "../../types/types";
 
 const TableHeading = ({onFilterClick}) => {
   const idRef = createRef();
@@ -17,7 +18,8 @@ const TableHeading = ({onFilterClick}) => {
           className="table__button"
           ref={idRef}
           onClick={() => {
-            onFilterClick(idRef.current);
+            const refs = [idRef.current, firstNameRef.current, lastNameRef.current, emailRef.current, phoneRef.current];
+            onFilterClick(idRef.current, refs);
           }}
         >
           id
@@ -28,7 +30,8 @@ const TableHeading = ({onFilterClick}) => {
           className="table__button"
           ref={firstNameRef}
           onClick={() => {
-            onFilterClick(firstNameRef.current);
+            const refs = [idRef.current, firstNameRef.current, lastNameRef.current, emailRef.current, phoneRef.current];
+            onFilterClick(firstNameRef.current, refs);
           }}
         >
           firstName
@@ -39,7 +42,8 @@ const TableHeading = ({onFilterClick}) => {
           className="table__button"
           ref={lastNameRef}
           onClick={() => {
-            onFilterClick(lastNameRef.current);
+            const refs = [idRef.current, firstNameRef.current, lastNameRef.current, emailRef.current, phoneRef.current];
+            onFilterClick(lastNameRef.current, refs);
           }}
         >
           lastName
@@ -50,7 +54,8 @@ const TableHeading = ({onFilterClick}) => {
           className="table__button"
           ref={emailRef}
           onClick={() => {
-            onFilterClick(emailRef.current);
+            const refs = [idRef.current, firstNameRef.current, lastNameRef.current, emailRef.current, phoneRef.current];
+            onFilterClick(emailRef.current, refs);
           }}
         >
           email
@@ -61,7 +66,8 @@ const TableHeading = ({onFilterClick}) => {
           className="table__button"
           ref={phoneRef}
           onClick={() => {
-            onFilterClick(phoneRef.current);
+            const refs = [idRef.current, firstNameRef.current, lastNameRef.current, emailRef.current, phoneRef.current];
+            onFilterClick(phoneRef.current, refs);
           }}
         >
           phone
@@ -71,10 +77,19 @@ const TableHeading = ({onFilterClick}) => {
   );
 };
 
+TableHeading.propTypes = tableHeadingType;
+
 const mapDispatchToPorps = (dispatch) => ({
-  onFilterClick(ref) {
+  onFilterClick(ref, refs) {
     let filterName = ref.textContent;
     let filterDirection;
+
+    refs.forEach((elementRef) => {
+      if (elementRef !== ref) {
+        elementRef.classList.remove(`table__button--bot-to-top`);
+        elementRef.classList.remove(`table__button--top-to-bot`);
+      }
+    });
 
     switch (true) {
       case ref.classList.contains(`table__button--top-to-bot`):
