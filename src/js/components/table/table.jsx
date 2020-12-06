@@ -2,6 +2,7 @@ import React, {PureComponent} from "react";
 import Pagination from "../pagination/pagination";
 import TableHeading from "../table-heading/table-heading";
 import TableElement from "../table-element/table-element";
+import Loading from "../loading/loading";
 import {connect} from "react-redux";
 import {tableType} from "../../types/types";
 import {fetchData} from "../../store/action/api-action";
@@ -20,29 +21,35 @@ class Table extends PureComponent {
   }
 
   render() {
-    const {currentPageUsers} = this.props;
-    return (
-      <section className="table">
-        <table className="table__table">
-          <thead>
-            <TableHeading/>
-          </thead>
-          <tbody>
-            {
-              currentPageUsers.map((user) => {
-                return (
-                  <TableElement
-                    key = {`${user.id}+${user.lastName}+${user.firstNmae}`}
-                    user = {user}
-                  />
-                );
-              })
-            }
-          </tbody>
-        </table>
-        <Pagination/>
-      </section>
-    );
+    const {isLoading, currentPageUsers} = this.props;
+
+    if (!isLoading) {
+      return (
+        <section className="table">
+          <table className="table__table">
+            <thead>
+              <TableHeading/>
+            </thead>
+            <tbody>
+              {
+                currentPageUsers.map((user) => {
+                  return (
+                    <TableElement
+                      key = {`${user.id}+${user.lastName}+${user.firstNmae}`}
+                      user = {user}
+                    />
+                  );
+                })
+              }
+            </tbody>
+          </table>
+          <Pagination/>
+        </section>
+      );
+    } else {
+      return <Loading/>;
+    }
+
   }
 }
 
@@ -55,7 +62,8 @@ const mapDispatchToPorps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  currentPageUsers: state.currentPageUsers
+  currentPageUsers: state.currentPageUsers,
+  isLoading: state.isLoading
 });
 
 export {Table};

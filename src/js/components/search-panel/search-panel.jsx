@@ -2,7 +2,7 @@ import React, {createRef} from "react";
 import {connect} from "react-redux";
 import {searchUsers, updateCurrentUsers, updatePagesCount} from "../../store/action/action";
 
-const SearchPanel = ({onSearchClick}) => {
+const SearchPanel = ({isLoading, onSearchClick}) => {
   const searchRef = createRef();
 
   return (
@@ -10,12 +10,19 @@ const SearchPanel = ({onSearchClick}) => {
       <input className="controls__search" type="text" name="filtration input" placeholder="Введите данные поиска" ref={searchRef}/>
       <button className="controls__find" type="submit" onClick={(evt) => {
         evt.preventDefault();
-        const searchString = searchRef.current.value;
-        onSearchClick(searchString);
+
+        if (!isLoading) {
+          const searchString = searchRef.current.value;
+          onSearchClick(searchString);
+        }
       }}>Найти</button>
     </form>
   );
 };
+
+const mapStateToProps = (state) => ({
+  isLoading: state.isLoading
+});
 
 const mapDispatchToProps = (dispatch) => ({
   onSearchClick(searchString) {
@@ -26,4 +33,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export {SearchPanel};
-export default connect(null, mapDispatchToProps)(SearchPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPanel);

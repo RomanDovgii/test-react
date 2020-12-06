@@ -1,9 +1,9 @@
 import React from "react";
 import SearchPanel from "../search-panel/search-panel";
-import AddToTable from "../add-to-table/add-to-table";
+import AddUser from "../add-user/add-user";
 import withActiveAddUser from "../hoc/with-active-add-user/with-active-add-user";
 
-const AddToTableWrapped = withActiveAddUser(AddToTable);
+const AddToTableWrapped = withActiveAddUser(AddUser);
 
 const Controls = () => {
   return (

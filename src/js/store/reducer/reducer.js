@@ -9,7 +9,8 @@ const initialState = {
   selectedUser: {},
   pages: 0,
   currentPage: 1,
-  filter: `none`
+  filter: `none`,
+  isLoading: true
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,7 +22,8 @@ const reducer = (state = initialState, action) => {
           state,
           {
             users: receivedUsers,
-            originalUsers: receivedUsers.slice()
+            originalUsers: receivedUsers.slice(),
+            isLoading: false
           }
       );
     case ActionType.UPDATE_CURRENT_USERS:
