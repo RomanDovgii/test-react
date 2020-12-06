@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 #root {
   display: flex;
   flex-direction: column;

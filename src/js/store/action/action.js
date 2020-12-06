@@ -63,7 +63,7 @@ export const filterUsers = (filterInfo) => ({
   payload: filterInfo
 });
 
-export const searchUsers = (string) => ({
+export const searchUsers = (searchString) => ({
   type: ActionType.SEARCH,
-  payload: string
+  payload: searchString
 });

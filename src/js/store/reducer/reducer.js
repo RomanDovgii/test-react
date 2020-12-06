@@ -1,5 +1,5 @@
 import {ActionType} from "../action/action";
-import {extend, sortToTop, sortToBot} from "../../utils/utils";
+import {extend, sortToTop, sortToBot, filterComplexObject} from "../../utils/utils";
 import {MAXIMUM_USERS_PER_PAGE, FilterType, FilterDirection} from "../../utils/const";
 
 const initialState = {
@@ -157,6 +157,29 @@ const reducer = (state = initialState, action) => {
             users: filteredUsers,
           }
       );
+
+    case ActionType.SEARCH:
+      let usersAfterSearch = state.originalUsers.slice();
+      if (action.payload) {
+        usersAfterSearch = usersAfterSearch.filter((user) => {
+          const isSearchIncluded = filterComplexObject(user, action.payload);
+          return isSearchIncluded;
+        });
+
+        return extend(
+            state,
+            {
+              users: usersAfterSearch,
+            }
+        );
+      } else {
+        return extend(
+            state,
+            {
+              users: usersAfterSearch,
+            }
+        );
+      }
   }
 
   return state;
