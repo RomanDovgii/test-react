@@ -5,6 +5,7 @@ export const ActionType = {
   SELECT_USER: `SELECT_USER`,
   CHANGE_PAGE: `CHANGE_PAGE`,
   FETCH_USERS: `FETCH_USERS`,
+  FLUSH_DATA: `FLUSH_DATA`,
   FLUSH_SELECTED: `FLUSH_SELECTED`,
   FIRST_PAGE: `FIRST_PAGE`,
   NEXT_PAGE: `NEXT_PAGE`,
@@ -17,6 +18,10 @@ export const ActionType = {
 export const fetchUsers = (users) => ({
   type: ActionType.FETCH_USERS,
   payload: users
+});
+
+export const flushData = () => ({
+  type: ActionType.FLUSH_DATA
 });
 
 export const updateCurrentUsers = () => ({

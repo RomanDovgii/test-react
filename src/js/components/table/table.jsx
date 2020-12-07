@@ -1,4 +1,5 @@
 import React, {PureComponent} from "react";
+import {withRouter} from "react-router-dom";
 import Pagination from "../pagination/pagination";
 import TableHeading from "../table-heading/table-heading";
 import TableElement from "../table-element/table-element";
@@ -6,6 +7,7 @@ import Loading from "../loading/loading";
 import {connect} from "react-redux";
 import {tableType} from "../../types/types";
 import {fetchData} from "../../store/action/api-action";
+import {flushData} from "../../store/action/action";
 
 class Table extends PureComponent {
   constructor(props) {
@@ -16,8 +18,14 @@ class Table extends PureComponent {
     const {loadData, currentPageUsers} = this.props;
 
     if (currentPageUsers.length === 0) {
-      loadData();
+      loadData(this.props.location.state.dataSize);
     }
+  }
+
+  componentWillUnmount() {
+    const {onUnmount} = this.props;
+
+    onUnmount();
   }
 
   render() {
@@ -56,8 +64,11 @@ class Table extends PureComponent {
 Table.propTypes = tableType;
 
 const mapDispatchToPorps = (dispatch) => ({
-  loadData() {
-    dispatch(fetchData(`SMALL`));
+  loadData(dataSize) {
+    dispatch(fetchData(dataSize));
+  },
+  onUnmount() {
+    dispatch(flushData());
   }
 });
 
@@ -67,4 +78,4 @@ const mapStateToProps = (state) => ({
 });
 
 export {Table};
-export default connect(mapStateToProps, mapDispatchToPorps)(Table);
+export default withRouter(connect(mapStateToProps, mapDispatchToPorps)(Table));

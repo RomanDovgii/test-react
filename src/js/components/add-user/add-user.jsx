@@ -58,8 +58,20 @@ const AddUser = ({isOpen, isLoading, onAddClick, onCloseClick, onAddToTableClick
             const emailValue = emailRef.current.value;
             const phoneValue = phoneRef.current.value;
 
+            const refs = [
+              idRef.current,
+              firstNameRef.current,
+              lastNameRef.current,
+              emailRef.current,
+              phoneRef.current
+            ];
+
 
             if (!isLoading && idValue && firstNameValue && lastNameValue && emailValue && phoneValue) {
+              refs.forEach((ref) => {
+                ref.classList.remove(`add-user__input--error`);
+              });
+
               const user = {
                 id: idValue,
                 firstName: firstNameValue,
@@ -77,9 +89,18 @@ const AddUser = ({isOpen, isLoading, onAddClick, onCloseClick, onAddToTableClick
 
               onCloseClick();
               onAddToTableClick(user);
+            } else {
+              refs.forEach((ref) => {
+                if (!ref.value) {
+                  ref.classList.add(`add-user__input--error`);
+                } else {
+                  ref.classList.remove(`add-user__input--error`);
+                }
+              });
             }
           }
           }
+          disabled
         >
           Добавить в таблицу
         </button>

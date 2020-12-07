@@ -1,0 +1,34 @@
+.selection {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.selection__text {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.selection__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selection__link {
+  text-decoration: none;
+
+  font-size: 20px;
+  font-weight: 300;
+  color: #333333;
+
+  margin-top: 20px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -19,7 +19,7 @@ const UserInfo = ({selectedUser}) => {
           </li>
           <li className="user-info__item user-info__item--description">
             <p className="user-info__description">Описание:</p>
-            <textarea value={description} readOnly/>
+            <textarea className="user-info__textarea" value={description} readOnly/>
           </li>
           <li className="user-info__item">
             <p className="user-info__description">Адрес проживания:</p>

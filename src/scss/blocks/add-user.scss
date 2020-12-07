@@ -22,4 +22,9 @@
   height: 100%;
 
   padding: 10px 10px 10px 10px;
+
+  &--error {
+    background-color: #aa4c4c86;
+    color: #eeeeee;
+  }
 }

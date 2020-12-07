@@ -26,6 +26,11 @@ const reducer = (state = initialState, action) => {
             isLoading: false
           }
       );
+    case ActionType.FLUSH_DATA:
+      return extend(
+          state,
+          initialState
+      );
     case ActionType.UPDATE_CURRENT_USERS:
       const users = state.users;
       const firstIndex = (state.currentPage - 1) * MAXIMUM_USERS_PER_PAGE;
@@ -54,7 +59,7 @@ const reducer = (state = initialState, action) => {
           }
       );
     case ActionType.ADD_USER:
-      const oldUsers = state.users;
+      const oldUsers = state.originalUsers.slice();
 
       const peopleUpdated = [
         action.payload,
