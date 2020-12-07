@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {UNKNOWN_INFORMATION, DESCRIPTION_FOR_NEW_USER} from "../../utils/const";
 import {addUser, updateCurrentUsers, updatePagesCount} from "../../store/action/action";
 
-const AddUser = ({isOpen, areFilled, isLoading, onAddClick, onCloseClick, onInputChange, onAddToTableClick}) => {
+const AddUser = ({isOpen, areFilled, isLoading, onAddClick, onCloseClick, onInputChange, onAddToTableClick, onSubmitClick}) => {
   const idRef = createRef();
   const firstNameRef = createRef();
   const lastNameRef = createRef();
@@ -155,6 +155,7 @@ const AddUser = ({isOpen, areFilled, isLoading, onAddClick, onCloseClick, onInpu
               };
 
               onCloseClick();
+              onSubmitClick();
               onAddToTableClick(user);
             }
           }
