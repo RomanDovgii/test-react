@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correct controls 1`] = `
+<section
+  className="controls"
+>
+  <Memo(Connect(SearchPanel)) />
+  <WithActiveAddUser />
+</section>
+`;

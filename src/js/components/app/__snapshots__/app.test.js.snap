@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correct catalog 1`] = `
+<BrowserRouter>
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/table"
+      render={[Function]}
+    />
+  </Switch>
+</BrowserRouter>
+`;
