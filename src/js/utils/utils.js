@@ -50,3 +50,5 @@ export const filterComplexObject = (object, searchString) => {
 
   return isIncluded;
 };
+
+export const noop = () => {};

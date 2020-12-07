@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correct closed AddUser with locked button 1`] = `
+<React.Fragment>
+  <button
+    className="controls__add-button"
+    onClick={[Function]}
+  >
+    Добавить
+  </button>
+</React.Fragment>
+`;
+
+exports[`Should render correct open AddUser with locked button 1`] = `
+<React.Fragment>
+  <button
+    className="controls__add-button"
+    onClick={[Function]}
+  >
+    Закрыть
+  </button>
+  <form
+    className="controls__add-user"
+  >
+    <table
+      className="controls__add-user add-user"
+    >
+      <thead>
+        <AddUserHeading />
+      </thead>
+      <tbody>
+        <tr
+          className="add-user__row"
+        >
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="id"
+              onChange={[Function]}
+              placeholder="Введите id"
+              type="text"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="firstName"
+              onChange={[Function]}
+              placeholder="Введите Имя"
+              type="text"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="lastName"
+              onChange={[Function]}
+              placeholder="Введите Фамилию"
+              type="text"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="email"
+              onChange={[Function]}
+              placeholder="Введите email"
+              type="email"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="phone"
+              onChange={[Function]}
+              placeholder="Введите телефон"
+              ype="text"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      className="controls__add-button controls__add-button--to-table"
+      disabled={true}
+      onClick={[Function]}
+      type="submit"
+    >
+      Добавить в таблицу
+    </button>
+  </form>
+</React.Fragment>
+`;
+
+exports[`Should render correct open AddUser with unlocked button 1`] = `
+<React.Fragment>
+  <button
+    className="controls__add-button"
+    onClick={[Function]}
+  >
+    Закрыть
+  </button>
+  <form
+    className="controls__add-user"
+  >
+    <table
+      className="controls__add-user add-user"
+    >
+      <thead>
+        <AddUserHeading />
+      </thead>
+      <tbody>
+        <tr
+          className="add-user__row"
+        >
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="id"
+              onChange={[Function]}
+              placeholder="Введите id"
+              type="text"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="firstName"
+              onChange={[Function]}
+              placeholder="Введите Имя"
+              type="text"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="lastName"
+              onChange={[Function]}
+              placeholder="Введите Фамилию"
+              type="text"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="email"
+              onChange={[Function]}
+              placeholder="Введите email"
+              type="email"
+            />
+          </td>
+          <td
+            className="add-user__data"
+          >
+            <input
+              className="add-user__input"
+              name="phone"
+              onChange={[Function]}
+              placeholder="Введите телефон"
+              ype="text"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      className="controls__add-button controls__add-button--to-table"
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+    >
+      Добавить в таблицу
+    </button>
+  </form>
+</React.Fragment>
+`;
