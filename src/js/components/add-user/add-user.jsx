@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {UNKNOWN_INFORMATION, DESCRIPTION_FOR_NEW_USER} from "../../utils/const";
 import {addUser, updateCurrentUsers, updatePagesCount} from "../../store/action/action";
 
-const AddUser = ({isOpen, isLoading, onAddClick, onCloseClick, onAddToTableClick}) => {
+const AddUser = ({isOpen, areFilled, isLoading, onAddClick, onCloseClick, onInputChange, onAddToTableClick}) => {
   const idRef = createRef();
   const firstNameRef = createRef();
   const lastNameRef = createRef();
@@ -29,19 +29,99 @@ const AddUser = ({isOpen, isLoading, onAddClick, onCloseClick, onAddToTableClick
           <tbody>
             <tr className="add-user__row">
               <td className="add-user__data">
-                <input type="text" name="id" className="add-user__input" placeholder="Введите id" ref={idRef}/>
+                <input
+                  type="text"
+                  name="id"
+                  className="add-user__input"
+                  placeholder="Введите id"
+                  ref={idRef}
+                  onChange={() => {
+                    const refs = [
+                      idRef.current,
+                      firstNameRef.current,
+                      lastNameRef.current,
+                      emailRef.current,
+                      phoneRef.current
+                    ];
+
+                    onInputChange(refs);
+                  }}/>
               </td>
               <td className="add-user__data">
-                <input type="text" name="firstName" className="add-user__input" placeholder="Введите Имя" ref={firstNameRef}/>
+                <input
+                  type="text"
+                  name="firstName"
+                  className="add-user__input"
+                  placeholder="Введите Имя"
+                  ref={firstNameRef}
+                  onChange={() => {
+                    const refs = [
+                      idRef.current,
+                      firstNameRef.current,
+                      lastNameRef.current,
+                      emailRef.current,
+                      phoneRef.current
+                    ];
+
+                    onInputChange(refs);
+                  }}/>
               </td>
               <td className="add-user__data">
-                <input type="text" name="lastName" className="add-user__input" placeholder="Введите Фамилию" ref={lastNameRef}/>
+                <input
+                  type="text"
+                  name="lastName"
+                  className="add-user__input"
+                  placeholder="Введите Фамилию"
+                  ref={lastNameRef}
+                  onChange={() => {
+                    const refs = [
+                      idRef.current,
+                      firstNameRef.current,
+                      lastNameRef.current,
+                      emailRef.current,
+                      phoneRef.current
+                    ];
+
+                    onInputChange(refs);
+                  }}/>
               </td>
               <td className="add-user__data">
-                <input type="email" name="email" className="add-user__input" placeholder="Введите email" ref={emailRef}/>
+                <input
+                  type="email"
+                  name="email"
+                  className="add-user__input"
+                  placeholder="Введите email"
+                  ref={emailRef}
+                  onChange={() => {
+                    const refs = [
+                      idRef.current,
+                      firstNameRef.current,
+                      lastNameRef.current,
+                      emailRef.current,
+                      phoneRef.current
+                    ];
+
+                    onInputChange(refs);
+                  }}/>
               </td>
               <td className="add-user__data">
-                <input type="text" name="phone" className="add-user__input" placeholder="Введите телефон" ref={phoneRef}/>
+                <input
+                  ype="text"
+                  name="phone"
+                  className="add-user__input"
+                  placeholder="Введите телефон"
+                  ref={phoneRef}
+                  onChange={() => {
+                    const refs = [
+                      idRef.current,
+                      firstNameRef.current,
+                      lastNameRef.current,
+                      emailRef.current,
+                      phoneRef.current
+                    ];
+
+                    onInputChange(refs);
+                  }}/>
               </td>
             </tr>
           </tbody>
@@ -58,20 +138,7 @@ const AddUser = ({isOpen, isLoading, onAddClick, onCloseClick, onAddToTableClick
             const emailValue = emailRef.current.value;
             const phoneValue = phoneRef.current.value;
 
-            const refs = [
-              idRef.current,
-              firstNameRef.current,
-              lastNameRef.current,
-              emailRef.current,
-              phoneRef.current
-            ];
-
-
-            if (!isLoading && idValue && firstNameValue && lastNameValue && emailValue && phoneValue) {
-              refs.forEach((ref) => {
-                ref.classList.remove(`add-user__input--error`);
-              });
-
+            if (!isLoading) {
               const user = {
                 id: idValue,
                 firstName: firstNameValue,
@@ -89,18 +156,10 @@ const AddUser = ({isOpen, isLoading, onAddClick, onCloseClick, onAddToTableClick
 
               onCloseClick();
               onAddToTableClick(user);
-            } else {
-              refs.forEach((ref) => {
-                if (!ref.value) {
-                  ref.classList.add(`add-user__input--error`);
-                } else {
-                  ref.classList.remove(`add-user__input--error`);
-                }
-              });
             }
           }
           }
-          disabled
+          disabled = {!areFilled}
         >
           Добавить в таблицу
         </button>

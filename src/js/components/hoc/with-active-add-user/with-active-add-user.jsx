@@ -6,11 +6,13 @@ const withActiveAddUser = (Component) => {
       super(props);
 
       this.state = {
-        isOpen: false
+        isOpen: false,
+        areFilled: false
       };
 
       this.handleAddClick = this.handleAddClick.bind(this);
       this.handleCloseClick = this.handleCloseClick.bind(this);
+      this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleAddClick() {
@@ -25,12 +27,27 @@ const withActiveAddUser = (Component) => {
       });
     }
 
+    handleInputChange(refs) {
+      let areRefsFilled = true;
+
+      refs.forEach((ref) => {
+        const isFilled = ref.value !== ``;
+        areRefsFilled = areRefsFilled && isFilled;
+      });
+
+      this.setState({
+        areFilled: areRefsFilled
+      });
+    }
+
     render() {
       return (
         <Component
           onAddClick = {this.handleAddClick}
           onCloseClick = {this.handleCloseClick}
+          onInputChange = {this.handleInputChange}
           isOpen = {this.state.isOpen}
+          areFilled = {this.state.areFilled}
         />
       );
     }
