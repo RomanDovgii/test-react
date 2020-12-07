@@ -34,7 +34,6 @@ const reducer = (state = initialState, action) => {
           initialState
       );
     case ActionType.UPDATE_CURRENT_USERS:
-      console.log(state.users);
       const users = state.users.slice();
       const firstIndex = (state.currentPage - 1) * MAXIMUM_USERS_PER_PAGE;
       const secondIndex = state.currentPage * MAXIMUM_USERS_PER_PAGE;
@@ -158,7 +157,6 @@ const reducer = (state = initialState, action) => {
             : startUsers.sort((a, b) => sortToBot(a.phone, b.phone));
           break;
         case FilterType.NONE:
-          console.log(state.searchedUsers);
           const originalUsersList = state.searchedUsers.slice();
           filteredUsers = originalUsersList;
           break;
