@@ -1,5 +1,5 @@
 export const ActionType = {
-  FILTER: `FILTER`,
+  SORT: `SORT`,
   SEARCH: `SEARCH`,
   ADD_USER: `ADD_USER`,
   SELECT_USER: `SELECT_USER`,
@@ -63,8 +63,8 @@ export const toPrevPage = () => ({
   type: ActionType.PREV_PAGE
 });
 
-export const filterUsers = (filterInfo) => ({
-  type: ActionType.FILTER,
+export const sortUsers = (filterInfo) => ({
+  type: ActionType.SORT,
   payload: filterInfo
 });
 

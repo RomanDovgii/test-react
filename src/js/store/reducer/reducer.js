@@ -4,6 +4,7 @@ import {MAXIMUM_USERS_PER_PAGE, FilterType, FilterDirection} from "../../utils/c
 
 const initialState = {
   originalUsers: [],
+  searchedUsers: [],
   users: [],
   currentPageUsers: [],
   selectedUser: {},
@@ -23,6 +24,7 @@ const reducer = (state = initialState, action) => {
           {
             users: receivedUsers,
             originalUsers: receivedUsers.slice(),
+            searchedUsers: receivedUsers.slice(),
             isLoading: false
           }
       );
@@ -32,7 +34,8 @@ const reducer = (state = initialState, action) => {
           initialState
       );
     case ActionType.UPDATE_CURRENT_USERS:
-      const users = state.users;
+      console.log(state.users);
+      const users = state.users.slice();
       const firstIndex = (state.currentPage - 1) * MAXIMUM_USERS_PER_PAGE;
       const secondIndex = state.currentPage * MAXIMUM_USERS_PER_PAGE;
       const aCurrentPagePeople = users.slice(firstIndex, secondIndex);
@@ -74,6 +77,7 @@ const reducer = (state = initialState, action) => {
           {
             users: peopleUpdated,
             originalUsers: peopleUpdated.slice(),
+            searchedUsers: peopleUpdated.slice(),
             currentPageUsers: aCurrentPagePeopleUpdated,
             pages: aPagesUpdated,
             currentPage: 1
@@ -117,7 +121,7 @@ const reducer = (state = initialState, action) => {
             currentPage: prevPage
           }
       );
-    case ActionType.FILTER:
+    case ActionType.SORT:
       const startUsers = state.users.slice();
       const filterType = action.payload.filter;
       const filterDirection = action.payload.direction;
@@ -154,7 +158,8 @@ const reducer = (state = initialState, action) => {
             : startUsers.sort((a, b) => sortToBot(a.phone, b.phone));
           break;
         case FilterType.NONE:
-          const originalUsersList = state.originalUsers.slice();
+          console.log(state.searchedUsers);
+          const originalUsersList = state.searchedUsers.slice();
           filteredUsers = originalUsersList;
           break;
       }
@@ -177,6 +182,7 @@ const reducer = (state = initialState, action) => {
             state,
             {
               users: usersAfterSearch,
+              searchedUsers: usersAfterSearch,
               currentPage: 1
             }
         );
@@ -185,6 +191,7 @@ const reducer = (state = initialState, action) => {
             state,
             {
               users: usersAfterSearch,
+              searchedUsers: usersAfterSearch,
               currentPage: 1
             }
         );

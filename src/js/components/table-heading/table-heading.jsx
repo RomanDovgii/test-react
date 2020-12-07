@@ -1,6 +1,6 @@
 import React, {createRef} from "react";
 import {connect} from "react-redux";
-import {filterUsers, updateCurrentUsers} from "../../store/action/action";
+import {sortUsers, updateCurrentUsers} from "../../store/action/action";
 import {FilterDirection, FilterType} from "../../utils/const";
 import {tableHeadingType} from "../../types/types";
 
@@ -111,7 +111,7 @@ const mapDispatchToPorps = (dispatch) => ({
       filter: filterName,
       direction: filterDirection,
     };
-    dispatch(filterUsers(filterInfo));
+    dispatch(sortUsers(filterInfo));
     dispatch(updateCurrentUsers());
   }
 });
