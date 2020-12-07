@@ -118,7 +118,7 @@ const reducer = (state = initialState, action) => {
           }
       );
     case ActionType.FILTER:
-      const startUsers = state.users;
+      const startUsers = state.users.slice();
       const filterType = action.payload.filter;
       const filterDirection = action.payload.direction;
       let filteredUsers;

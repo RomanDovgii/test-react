@@ -43,7 +43,7 @@ class Table extends PureComponent {
                 currentPageUsers.map((user) => {
                   return (
                     <TableElement
-                      key = {`${user.id}+${user.lastName}+${user.firstNmae}`}
+                      key = {`${user.id}+${user.lastName}+${user.firstNmae}+${Math.random(1000)}`}
                       user = {user}
                     />
                   );
