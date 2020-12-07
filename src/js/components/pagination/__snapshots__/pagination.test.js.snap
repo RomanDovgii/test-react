@@ -1,0 +1,395 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correct Pagination with 5 pages 1`] = `
+<ul
+  className="pagination"
+>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link pagination__link--active"
+      href="#"
+      onClick={[Function]}
+    >
+      1
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      2
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      3
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      4
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      5
+    </a>
+  </li>
+  <React.Fragment>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &gt;
+      </a>
+    </li>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &gt;&gt;
+      </a>
+    </li>
+  </React.Fragment>
+</ul>
+`;
+
+exports[`Should render correct Pagination with 10 pages 1`] = `
+<ul
+  className="pagination"
+>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link pagination__link--active"
+      href="#"
+      onClick={[Function]}
+    >
+      1
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      2
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      3
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      4
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      5
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      6
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      7
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      8
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      9
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      10
+    </a>
+  </li>
+  <React.Fragment>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &gt;
+      </a>
+    </li>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &gt;&gt;
+      </a>
+    </li>
+  </React.Fragment>
+</ul>
+`;
+
+exports[`Should render correct Pagination with 10 pages, user should be on fifth page 1`] = `
+<ul
+  className="pagination"
+>
+  <React.Fragment>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &lt;&lt;
+      </a>
+    </li>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &lt;
+      </a>
+    </li>
+  </React.Fragment>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      1
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      2
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      3
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      4
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link pagination__link--active"
+      href="#"
+      onClick={[Function]}
+    >
+      5
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      6
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      7
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      8
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      9
+    </a>
+  </li>
+  <li
+    className="pagination__item"
+  >
+    <a
+      className="pagination__link "
+      href="#"
+      onClick={[Function]}
+    >
+      10
+    </a>
+  </li>
+  <React.Fragment>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &gt;
+      </a>
+    </li>
+    <li
+      className="pagination__item"
+    >
+      <a
+        className="pagination__link"
+        href="#"
+        onClick={[Function]}
+      >
+        &gt;&gt;
+      </a>
+    </li>
+  </React.Fragment>
+</ul>
+`;
+
+exports[`Shouldn't render Pagination 1`] = `null`;

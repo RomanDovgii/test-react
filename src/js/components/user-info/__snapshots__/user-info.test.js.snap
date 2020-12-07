@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render UserInfo 1`] = `
+<section
+  className="user-info"
+>
+  <ul
+    className="user-nfo__list"
+  >
+    <li
+      className="user-info__item"
+    >
+      <p
+        className="user-info__description"
+      >
+        Выбран пользователь:
+      </p>
+      <p
+        className="user-info__information"
+      >
+        <b>
+          Susen
+           
+          Graham
+        </b>
+      </p>
+    </li>
+    <li
+      className="user-info__item user-info__item--description"
+    >
+      <p
+        className="user-info__description"
+      >
+        Описание:
+      </p>
+      <textarea
+        className="user-info__textarea"
+        readOnly={true}
+        value="aenean augue neque mattis sollicitudin turpis sed aenean elit fringilla nec massa libero nullam lectus aenean et vel sed pulvinar et augue facilisis vitae libero dolor massa adipiscing dolor vitae orci tortor"
+      />
+    </li>
+    <li
+      className="user-info__item"
+    >
+      <p
+        className="user-info__description"
+      >
+        Адрес проживания:
+      </p>
+      <p
+        className="user-info__information"
+      >
+        <b>
+          7422 Vitae Rd
+        </b>
+      </p>
+    </li>
+    <li
+      className="user-info__item"
+    >
+      <p
+        className="user-info__description"
+      >
+        Город:
+      </p>
+      <p
+        className="user-info__information"
+      >
+        <b>
+          Bergen County
+        </b>
+      </p>
+    </li>
+    <li
+      className="user-info__item"
+    >
+      <p
+        className="user-info__description"
+      >
+        Провинция/Штат:
+      </p>
+      <p
+        className="user-info__information"
+      >
+        <b>
+          NE
+        </b>
+      </p>
+    </li>
+    <li
+      className="user-info__item"
+    >
+      <p
+        className="user-info__description"
+      >
+        Индекс:
+      </p>
+      <p
+        className="user-info__information"
+      >
+        <b>
+          24099
+        </b>
+      </p>
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`Shouldn't render UserInfo 1`] = `null`;

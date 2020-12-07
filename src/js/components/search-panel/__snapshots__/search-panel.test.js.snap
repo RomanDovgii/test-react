@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render SearchPanel locked 1`] = `
+<form
+  className="controls__filtration"
+>
+  <input
+    className="controls__search"
+    name="filtration input"
+    placeholder="Введите данные поиска"
+    type="text"
+  />
+  <button
+    className="controls__find"
+    onClick={[Function]}
+    type="submit"
+  >
+    Найти
+  </button>
+</form>
+`;
+
+exports[`Should render SearchPanel unlocked 1`] = `
+<form
+  className="controls__filtration"
+>
+  <input
+    className="controls__search"
+    name="filtration input"
+    placeholder="Введите данные поиска"
+    type="text"
+  />
+  <button
+    className="controls__find"
+    onClick={[Function]}
+    type="submit"
+  >
+    Найти
+  </button>
+</form>
+`;

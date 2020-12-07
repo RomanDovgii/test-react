@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render SelectionPage 1`] = `
+<section
+  className="selection"
+>
+  <div
+    className="selection__wrapper"
+  >
+    <p
+      className="selection__text"
+    >
+      Выберите объем данных
+    </p>
+    <Link
+      className="selection__link"
+      to={
+        Object {
+          "pathname": "/table",
+          "state": Object {
+            "dataSize": "LARGE",
+          },
+        }
+      }
+    >
+       Большой объем данных 
+    </Link>
+    <Link
+      className="selection__link"
+      to={
+        Object {
+          "pathname": "/table",
+          "state": Object {
+            "dataSize": "SMALL",
+          },
+        }
+      }
+    >
+       Маленький объем данных
+    </Link>
+  </div>
+</section>
+`;

@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Table 1`] = `
+<section
+  className="table"
+>
+  <table
+    className="table__table"
+  >
+    <thead>
+      <Memo(Connect(TableHeading)) />
+    </thead>
+    <tbody>
+      <Memo(Connect(TableElement))
+        user={
+          Object {
+            "address": Object {
+              "city": "Bergen County",
+              "state": "NE",
+              "streetAddress": "7422 Vitae Rd",
+              "zip": "24099",
+            },
+            "description": "aenean augue neque mattis sollicitudin turpis sed aenean elit fringilla nec massa libero nullam lectus aenean et vel sed pulvinar et augue facilisis vitae libero dolor massa adipiscing dolor vitae orci tortor",
+            "email": "LNicholson@mi.org",
+            "firstName": "Susen",
+            "id": 339,
+            "lastName": "Graham",
+            "phone": "(220)920-9427",
+          }
+        }
+      />
+      <Memo(Connect(TableElement))
+        user={
+          Object {
+            "address": Object {
+              "city": "Bergen County",
+              "state": "NE",
+              "streetAddress": "7422 Vitae Rd",
+              "zip": "24099",
+            },
+            "description": "aenean augue neque mattis sollicitudin turpis sed aenean elit fringilla nec massa libero nullam lectus aenean et vel sed pulvinar et augue facilisis vitae libero dolor massa adipiscing dolor vitae orci tortor",
+            "email": "LNicholson@mi.org",
+            "firstName": "Susen",
+            "id": 339,
+            "lastName": "Graham",
+            "phone": "(220)920-9427",
+          }
+        }
+      />
+      <Memo(Connect(TableElement))
+        user={
+          Object {
+            "address": Object {
+              "city": "Bergen County",
+              "state": "NE",
+              "streetAddress": "7422 Vitae Rd",
+              "zip": "24099",
+            },
+            "description": "aenean augue neque mattis sollicitudin turpis sed aenean elit fringilla nec massa libero nullam lectus aenean et vel sed pulvinar et augue facilisis vitae libero dolor massa adipiscing dolor vitae orci tortor",
+            "email": "LNicholson@mi.org",
+            "firstName": "Susen",
+            "id": 339,
+            "lastName": "Graham",
+            "phone": "(220)920-9427",
+          }
+        }
+      />
+    </tbody>
+  </table>
+  <Memo(Connect(Pagination)) />
+</section>
+`;
+
+exports[`Should render loading Table 1`] = `<Loading />`;

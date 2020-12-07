@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render TableHeading 1`] = `
+<tr
+  className="table__row"
+>
+  <th
+    className="table__heading "
+  >
+    <button
+      className="table__button"
+      onClick={[Function]}
+    >
+      id
+    </button>
+  </th>
+  <th
+    className="table__heading"
+  >
+    <button
+      className="table__button"
+      onClick={[Function]}
+    >
+      firstName
+    </button>
+  </th>
+  <th
+    className="table__heading"
+  >
+    <button
+      className="table__button"
+      onClick={[Function]}
+    >
+      lastName
+    </button>
+  </th>
+  <th
+    className="table__heading"
+  >
+    <button
+      className="table__button"
+      onClick={[Function]}
+    >
+      email
+    </button>
+  </th>
+  <th
+    className="table__heading"
+  >
+    <button
+      className="table__button"
+      onClick={[Function]}
+    >
+      phone
+    </button>
+  </th>
+</tr>
+`;

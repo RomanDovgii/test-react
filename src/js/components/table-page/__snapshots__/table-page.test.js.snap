@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render TablePage 1`] = `
+<React.Fragment>
+  <Controls />
+  <withRouter(Connect(Table)) />
+  <Memo(Connect(UserInfo)) />
+</React.Fragment>
+`;
