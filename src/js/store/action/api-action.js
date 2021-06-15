@@ -24,5 +24,9 @@ export const fetchData = (dataSet) => (dispatch, _getState) => {
     dispatch(updatePagesCount());
   })
   .catch(() => {
+    console.log(`Возникла ошибка с получением данных`);
+  })
+  .finally(() => {
+    console.log(`Транзакция окончена`);
   });
 };

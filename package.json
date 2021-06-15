@@ -1,8 +1,8 @@
 {
-  "name": "technomart",
+  "name": "apilab",
   "version": "1.0.0",
   "private": true,
-  "description": "Technomart",
+  "description": "apilab",
   "scripts": {
     "eslint": "eslint --ext .jsx --ext .js src/",
     "test": "npm run eslint && npm run test.jest",
